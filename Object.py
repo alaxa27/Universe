@@ -6,10 +6,10 @@ class Object:
     """Here states the variables and methods for a given object"""
 
 
-    def __init__(self, x, y, m, r, v, c):
+    def __init__(self, x, y, m, r, c):
         self.mass = m
         self.radius = r
-        self.modVit = v
+        self.modVit = 0
         self.pos = np.array([x, y])
         self.color = c
         self.vit = np.array([0, 0])
