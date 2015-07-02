@@ -35,7 +35,7 @@ def update():
     fenetre.blit(fond,(0,0))
     for i in range(0, len(objects)):
         pos = zoom * coor_calc_disp(objects[i].pos) + np.array([width, height])/2
-        if zoom = 1:
+        if zoom == 1:
             pos -= np.array([width, height])/2
         pygame.draw.circle(fenetre, objects[i].color, (int(pos[0]), int(pos[1])), int(objects[i].radius * zoom))
         pygame.draw.line(fenetre, (0, 0, 0), pos, (pos[0] + objects[i].vit[0], pos[1] - objects[i].vit[1]))
