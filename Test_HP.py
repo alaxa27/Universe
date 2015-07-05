@@ -58,7 +58,7 @@ def update():
         if objects[i].collided == False:
             pos = zoom * coor_calc_disp(objects[i].pos) #+ np.array([width, height])/2
             pygame.draw.circle(fenetre, objects[i].color, (int(pos[0]), int(pos[1])), int(objects[i].radius * zoom))
-            pygame.draw.line(fenetre, (0, 0, 0), pos, np.asarray((pos[0] + objects[i].vit[0], pos[1] - objects[i].vit[1])))
+            pygame.draw.line(fenetre, (255, 255, 255), pos, np.asarray((pos[0] + objects[i].vit[0], pos[1] - objects[i].vit[1])))
     pygame.display.flip()
     pygame.display.update()
 
@@ -68,7 +68,7 @@ zoom = 1
 fenetre = pygame.display.set_mode((width, height))
 
 fond = pygame.Surface(fenetre.get_size())
-fond.fill((250, 250, 250))
+fond.fill((0, 0, 0))
 fenetre.blit(fond,(0,0))
 
 clock = pygame.time.Clock()
@@ -159,9 +159,9 @@ objects = []
 
 dT = 0.005
 t = 6 
-objects.append(Object(0, 0, 10000000, 100, (0, 0, 255)))
-objects.append(Object(220, 0, 1000, 100, (0, 0, 255)))
-objects[1].vit = np.asarray((0, 20))
+#objects.append(Object(0, 0, 10000000, 100, (0, 0, 255)))
+#objects.append(Object(220, 0, 1000, 100, (0, 0, 255)))
+#objects[1].vit = np.asarray((0, 20))
 #objects.append(Object(D, 0, 10000000, 100, (0, 0, 255)))
 continuer = 1
 time.sleep(0.5)
@@ -220,4 +220,4 @@ while continuer:
 
     update()
 
-    clock.tick(100)
+    clock.tick(60)
