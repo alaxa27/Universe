@@ -12,7 +12,7 @@ def gravity(a, b):
     if a.mass != 0 and b.mass != 0:
         r = math.pow(b.pos[0] - a.pos[0], 2) + math.pow(b.pos[1] - a.pos[1], 2)
         F = G * a.mass * b.mass / r
-        a.acc += (F * (b.pos - a.pos))/(a.mass * r)
+        a.acc += (F * (b.pos - a.pos))/(a.mass * math.sqrt(r))
         #b.acc += (F * (a.pos - b.pos))/(b.mass * r)
 
 def merge(a, b):
